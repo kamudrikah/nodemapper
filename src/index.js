@@ -23,6 +23,6 @@ app.get('/', function (req, res) {
     // return pdf2pic.convertBulk(tempPath, -1);
     res.send("kjhad");
 });
-app.listen(3000);
+app.listen(80);
 
 console.log('Node app is running..');
