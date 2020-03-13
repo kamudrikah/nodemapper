@@ -5,24 +5,26 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-app.get('/', function (req, res) {
-    const dest = path.resolve('./storage/form.pdf');
-    const tempPath = path.resolve('./storage/');
+const dest = path.resolve('./storage/form.pdf');
+const tempPath = path.resolve('./storage/');
 
-    const pdf2pic = new PDF2Pic({
-        savename: 'temp',
-        savedir: tempPath,
-        format: "png",
-        density: 200,
-        size: "1240x1754",
-    });
-    pdf2pic.convert(dest).then((resolve) => {
-        console.log("image converter successfully!");
-        return resolve;
-    });
-    // return pdf2pic.convertBulk(tempPath, -1);
-    res.send("kjhad");
+const pdf2pic = new PDF2Pic({
+    savename: 'temp',
+    savedir: tempPath,
+    format: "png",
+    density: 200,
+    size: "1240x1754",
 });
-app.listen(80);
+pdf2pic.convert(dest).then((resolve) => {
+    console.log("image converter successfully!");
+    return resolve;
+});
+// return pdf2pic.convertBulk(tempPath, -1);
+
+res.send("kjhad");
+
+// app.get('/', function (req, res) {
+// });
+// app.listen(80);
 
 console.log('Node app is running..');
