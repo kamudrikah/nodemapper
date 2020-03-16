@@ -15,16 +15,15 @@ const pdf2pic = new PDF2Pic({
     density: 200,
     size: "1240x1754",
 });
-pdf2pic.convert(dest).then((resolve) => {
+
+pdf2pic.convertBulk(dest).then((resolve) => {
     console.log("image converter successfully!");
     return resolve;
 });
-// return pdf2pic.convertBulk(tempPath, -1);
 
-res.send("kjhad");
-
+// res.send("Process complete");
 // app.get('/', function (req, res) {
 // });
-// app.listen(80);
+// app.listen(3000);
 
 console.log('Node app is running..');
